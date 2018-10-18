@@ -364,18 +364,18 @@ footer .copy-right {
       border: none;
       background-color: transparent;
       color: black; }
-  .our-team .jordan {
-    color: white;
-    width: 25%; }
-    .our-team .jordan #head {
-      width: 25%; }
-    .our-team .jordan .intro {
+  .jordan {
+    color: white; }
+    .jordan #head {
+      width: 25%;
+      height: 25%; }
+    .jordan .intro {
       width: 75%;
       color: white;
       font-size: 28px;
       line-height: 50px;
       margin-top: 100px; }
-    .our-team .jordan .hideMe {
+    .jordan .hideMe {
       display: flex; }
   .map iframe {
     height: 700px; }

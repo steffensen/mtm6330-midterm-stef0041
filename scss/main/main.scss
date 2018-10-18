@@ -355,23 +355,21 @@ footer {
       color: $black;
     }
   }
-  .our-team {
-    .jordan {
-      color: $white;
+  .jordan {
+    color: $white;
+    #head {
       width: 25%;
-      #head {
-        width: 25%;
-      }
-      .intro {
-        width: 75%;
-        color: $white;
-        font-size: 28px;
-        line-height: 50px;
-        margin-top: 100px;
-      }
-      .hideMe {
-        display: flex;
-      }
+      height: 25%;
+    }
+    .intro {
+      width: 75%;
+      color: $white;
+      font-size: 28px;
+      line-height: 50px;
+      margin-top: 100px;
+    }
+    .hideMe {
+      display: flex;
     }
   }
   .map {
