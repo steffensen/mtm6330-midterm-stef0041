@@ -8,7 +8,6 @@ $outerspace: rgba(210, 215, 211, 1);
 $onblack: rgba(217, 31, 24, 0.5);
 
 // Adding styles to website - Designing mobile first.
-
 // Nav bar
 .nav {
   position: sticky;
@@ -78,6 +77,7 @@ $onblack: rgba(217, 31, 24, 0.5);
     }
   }
 }
+// about us
 .about {
   position: relative;
   margin: 0;
@@ -103,6 +103,7 @@ $onblack: rgba(217, 31, 24, 0.5);
     }
   }
 }
+// my services
 .services-one {
   position: relative;
   background-color: $outerspace;
@@ -126,6 +127,7 @@ $onblack: rgba(217, 31, 24, 0.5);
     }
   }
 }
+// my services bottom
 .services-two {
   position: relative;
   background-color: $outerspace;
@@ -199,12 +201,14 @@ $onblack: rgba(217, 31, 24, 0.5);
     }
   }
 }
+// map iframe
 .map {
   iframe {
     display: block;
     width: 100%;
   }
 }
+// contact form
 .form {
   background-color: $outerspace;
   width: 100%;
