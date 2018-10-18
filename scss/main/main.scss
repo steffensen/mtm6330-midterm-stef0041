@@ -1,37 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
-html {
-  box-sizing: border-box;
-}
-* {
-  box-sizing: inherit;
-  &:before {
-    box-sizing: inherit;
-  }
-  &:after {
-    box-sizing: inherit;
-  }
-}
+@import 'base';
+// Global Sass Variales
 $black: black;
 $white: white;
-$tinted: rgba(217, 31, 24, 0.75);
+$tinted: rgb(217, 31, 24);
 $outerspace: rgba(210, 215, 211, 1);
-body {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', 'Lato', sans-serif;
-  min-width: 375px;
-  background-color: $outerspace;
-  @media (min-width: 768px) {
-    font-size: 25px;
-  }
-  @media only screen and (min-width: 1025px) {
-    body {
-      max-width: 1920px;
-      font-size: 30px;
-    }
-  }
-}
+$onblack: rgba(217, 31, 24, 0.5);
+
+// Adding styles to website - Designing mobile first.
+
+// Nav bar
 .nav {
   position: sticky;
   top: 0;
@@ -39,15 +17,19 @@ body {
   text-decoration: none;
   width: 100%;
   background-color: $black;
-  border-bottom: 7px solid $tinted;
-
+  border-bottom: 7px solid $onblack;
   nav {
     display: flex;
     align-items: center;
     height: 50px;
     width: 100%;
-    font-size: 15px;
-
+    font-size: 12px;
+    @media (min-width: 1224px) {
+      nav {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
     ul {
       display: flex;
       justify-content: space-evenly;
@@ -55,45 +37,35 @@ body {
       width: 100%;
       margin: 0;
       padding: 0;
-    }
-    a {
-      &:hover {
-        color: $tinted;
-        padding-bottom: 15px;
-        z-index: 1;
-        border-bottom: 8px solid $outerspace;
-        @media (min-width: 768px) {
-          padding-bottom: 10px;
-        }
-      }
-    }
-    @media (min-width: 768px) {
-      font-size: 25px;
-    }
-  }
-  ul {
-    li {
       a {
         color: $outerspace;
         padding: 10px;
         text-decoration: none;
+        @media (min-width: 768px) {
+          font-size: 25px;
+        }
+        &:hover {
+          color: $tinted;
+          padding-bottom: 18px;
+          z-index: 1;
+          border-bottom: 7px solid $outerspace;
+          @media (min-width: 768px) {
+            padding-bottom: 10px;
+          }
+        }
       }
     }
   }
 }
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-p {
-  margin: 0;
-  padding: 5px;
-}
-.introImages {
+.intro-images {
   position: relative;
   padding: 0;
   margin: 0;
+  @media (min-width: 1224px) {
+    .landing {
+      height: auto;
+    }
+  }
   .logo {
     img {
       position: absolute;
@@ -106,47 +78,24 @@ p {
     }
   }
 }
-
-.header {
-  background-color: $black;
-}
-h1 {
-  font-size: 25px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0 auto;
-  padding: 10px 0;
-  color: $white;
-  @media (min-width: 768px) {
-    font-size: 45px;
-  }
-}
-h2 {
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: underline red;
-  @media (min-width: 768px) {
-    font-size: 35px;
-  }
-}
 .about {
   position: relative;
   margin: 0;
   padding: 0;
-  .aboutUs {
-    margin: 0;
+  background-color: $outerspace;
+  .about-us {
     padding: 10px;
     width: 95%;
     height: auto;
-    line-height: 30px;
+    line-height: 25px;
     text-align: center;
     color: $white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $black;
-    border: 2px solid $tinted;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid rgba(255, 0, 0, 0.5);
     border-radius: 10px;
     @media (min-width: 768px) {
       line-height: 45px;
@@ -154,21 +103,18 @@ h2 {
     }
   }
 }
-.servicesOne {
+.services-one {
   position: relative;
-  width: 100%;
-  h2 {
-    padding-bottom: 10px;
-  }
+  background-color: $outerspace;
   .top {
-    font-size: 15px;
+    font-size: 12px;
     padding: 5px;
     width: 95%;
     height: auto;
-    line-height: 20px;
+    line-height: 14px;
     color: $white;
-    background-color: $black;
-    border: 2px solid $tinted;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid rgba(255, 0, 0, 0.5);
     border-radius: 10px;
     position: absolute;
     top: 50%;
@@ -177,25 +123,21 @@ h2 {
     @media (min-width: 768px) {
       font-size: 28px;
       line-height: 40px;
-      height: auto;
     }
   }
 }
-.servicesTwo {
+.services-two {
   position: relative;
-  width: 100%;
-  h2 {
-    padding-bottom: 10px;
-  }
+  background-color: $outerspace;
   .bottom {
     color: $white;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 14px;
     width: 95%;
     height: auto;
     padding: 5px;
-    background-color: $black;
-    border: 2px solid $tinted;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid rgba(255, 0, 0, 0.5);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -214,86 +156,106 @@ h2 {
     }
   }
 }
-.ourTeam {
-  position: relative;
-  .jordan {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .hideMe {
-      display: none;
-    }
-    h2 {
-      color: $white;
-    }
-    @media (min-width: 768px) {
-      top: 50%;
-      left: 50%;
+.jordan {
+  background-color: $outerspace;
+  padding: 10px;
+  h2 {
+    color: $tinted;
+  }
+  #head {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    background-color: $outerspace;
+  }
+  .hideMe {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    .hide-content {
+      font-size: 15px;
+      background-color: $outerspace;
+      margin: 50px auto;
+      padding: 15px;
+      line-height: 24px;
+      border: 1px solid #888;
+      width: 90%;
+      .close {
+        color: $black;
+        float: right;
+        font-size: 28px;
+        &:hover {
+          color: $white;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
-
 .map {
   iframe {
     display: block;
     width: 100%;
   }
 }
-#form {
+.form {
+  background-color: $outerspace;
   width: 100%;
-  height: auto;
-  padding: 20px;
-  background-color: $white;
-  input {
-    font-family: 'Lato', sans-serif;
-    font-size: 10px;
-    width: 100%;
-    height: 70px;
-    padding: 0px 15px 0px 15px;
-    background: transparent;
-    outline: none;
-    color: $black;
-    border: solid 1px $black;
-    border-bottom: none;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background: #ff030393;
-      color: #e2dedb;
-    }
-  }
-  textarea {
-    width: 100%;
-    height: 150px;
-    padding: 15px;
-    background: transparent;
-    outline: none;
-    color: $black;
-    font-family: 'Lato', sans-serif;
-    font-size: 10px;
-    border: solid 1px $black;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    &:hover {
-      background: #ff030393;
-      color: #e2dedb;
-    }
-  }
-  #submit {
-    width: 100%;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    color: #b3aca7;
-    outline: none;
-    cursor: pointer;
-    border: solid 1px $black;
-    border-top: none;
-    &:hover {
+  #form {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: $white;
+    input {
+      font-size: 10px;
+      width: 100%;
+      height: 70px;
+      padding: 0px 15px 0px 15px;
+      background: transparent;
+      outline: none;
       color: $black;
+      border: solid 1px $black;
+      border-bottom: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: $onblack;
+        color: #e2dedb;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 15px;
+      background: transparent;
+      outline: none;
+      color: $black;
+      font-size: 10px;
+      border: solid 1px $black;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: $onblack;
+        color: #e2dedb;
+      }
+    }
+    #submit {
+      width: 100%;
+      padding: 0;
+      margin: -5px 0px 0px 0px;
+      font-size: 20px;
+      color: #b3aca7;
+      outline: none;
+      cursor: pointer;
+      border: solid 1px $black;
+      border-top: none;
+      &:hover {
+        color: $black;
+      }
     }
   }
 }
@@ -309,14 +271,14 @@ footer {
       padding: 10px;
       color: $black;
       &:hover {
-        color: red;
+        color: $tinted;
       }
       @media (min-width: 768px) {
         width: 35%;
       }
     }
   }
-  .copyRight {
+  .copy-right {
     color: $white;
     background-color: $black;
     text-align: center;
@@ -327,30 +289,8 @@ footer {
     }
   }
 }
-
-@media only screen and (min-width: 1224px) {
-  body {
-    max-width: 1920px;
-    font-size: 30px;
-    margin: 0 auto;
-  }
-  .introImages {
-    .landing {
-      height: auto;
-    }
-    .logo {
-      width: 90%;
-    }
-  }
-  .nav {
-    nav {
-      width: 90%;
-      margin: 0 auto;
-    }
-  }
-  h1 {
-    font-size: 45px;
-  }
+// Styles for desktop. When i originally started i nested desktop outside of the main structure. Wanted to see the difference.
+@media (min-width: 1224px) {
   .about {
     display: flex;
     flex-direction: row;
@@ -358,7 +298,7 @@ footer {
     img {
       width: 50%;
     }
-    .aboutUs {
+    .about-us {
       position: relative;
       top: 0;
       left: 0;
@@ -372,7 +312,7 @@ footer {
       color: $black;
     }
   }
-  .servicesOne {
+  .services-one {
     display: flex;
     flex-direction: row-reverse;
     img {
@@ -391,7 +331,7 @@ footer {
       color: $black;
     }
   }
-  .servicesTwo {
+  .services-two {
     display: flex;
     flex-direction: row;
     img {
@@ -399,7 +339,7 @@ footer {
       height: 100%;
     }
     .bottom,
-    .servicesMobile {
+    .services-mobile {
       position: relative;
       top: 0;
       left: 0;
@@ -415,20 +355,13 @@ footer {
       color: $black;
     }
   }
-  .ourTeam {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    position: relative;
+  .our-team {
     .jordan {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       color: $white;
+      width: 25%;
+      #head {
+        width: 25%;
+      }
       .intro {
         width: 75%;
         color: $white;
@@ -438,10 +371,6 @@ footer {
       }
       .hideMe {
         display: flex;
-      }
-      img {
-        width: 20%;
-        margin-top: 50px;
       }
     }
   }
@@ -468,7 +397,7 @@ footer {
         width: 20%;
       }
     }
-    .copyRight {
+    .copy-right {
       background-color: $black;
     }
   }
